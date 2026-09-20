@@ -1,27 +1,30 @@
-# IT 140 Module Three Assignment
-# Paycheck Calculator Pseudocode Template
-#
-# Replace every TODO prompt with your own pseudocode.
-# Keep this file in .pseudo format for submission.
-#
-# Your finished pseudocode should represent the same logic as your flowchart.
-# Use clear indentation and ALLCAPS pseudocode keywords, such as GET (input),
-# PUT (output), LET (assignment), IF, ELSE, and ENDIF where they fit your design.
+// Program Name: Paycheck Calculator
+// Description: Calculates gross pay including overtime for hours worked over 40.
 
-START paycheck_calculator
+// Declare variables
+DECLARE hours_worked AS FLOAT
+DECLARE hourly_wage AS FLOAT
+DECLARE gross_pay AS FLOAT
+DECLARE regular_pay AS FLOAT
+DECLARE overtime_hours AS FLOAT
+DECLARE overtime_pay AS FLOAT
 
-    TODO: Obtain the required program input.
+// Prompt user for inputs
+PRINT "Enter total hours worked:"
+INPUT hours_worked
 
-    IF TODO: Specify the condition for the applicable pay rule.
-        TODO: List the processing steps for the true decision path.
-    ELSE
-        TODO: List the processing steps for the false decision path.
-    ENDIF
+PRINT "Enter hourly wage:"
+INPUT hourly_wage
 
-    TODO: Output the calculated weekly paycheck.
+// Check for overtime and calculate gross pay
+IF hours_worked > 40 THEN
+    regular_pay = 40 * hourly_wage
+    overtime_hours = hours_worked - 40
+    overtime_pay = overtime_hours * (hourly_wage * 1.5)
+    gross_pay = regular_pay + overtime_pay
+ELSE
+    gross_pay = hours_worked * hourly_wage
+ENDIF
 
-END paycheck_calculator
-
-
-# === References ===
-# TODO: List outside sources or assistance you actually used, or delete this line.
+// Display final result
+PRINT "Your total gross pay is: $" + gross_pay
